@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Guess Game</title>
+</head>
+<body>
+<h1 id="count"></h1>
+<script>
+var countHandle = document.getElementById('count');
+var name = prompt("Enter your name:");
+console.log("Welcome to the game " + name);
+var targetNumber = Math.round(Math.random() * 100);
+console.log(targetNumber);
+var playerGuesses = 0;
+var maxGuess = 10;
+while(playerGuesses < maxGuess){
+	countHandle.innerHTML = maxGuess - playerGuesses;
+	var guess = parseInt(prompt("Guess my number"));
+	if(guess < targetNumber){
+		console.log("OOPS !!! Your guess was low")
+	} else if(guess > targetNumber){
+		console.log("OOPS !!! Your guess was high")
+	} else if(guess == targetNumber){
+		console.log("Good job, you guessed my number")
+		break;
+	} 
+	playerGuesses++
+}
+
+	if (playerGuesses == 10 ){
+		console.log("out of playerGuesses")
+	}
+</script>
+</body>
+</html>
